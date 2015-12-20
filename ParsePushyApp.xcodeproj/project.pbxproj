@@ -16,6 +16,7 @@
 		016619D81C26E8EE007BD26E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 016619D61C26E8EE007BD26E /* LaunchScreen.storyboard */; };
 		016619E31C26E8EE007BD26E /* ParsePushyAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 016619E21C26E8EE007BD26E /* ParsePushyAppTests.m */; };
 		016619EE1C26E8EE007BD26E /* ParsePushyAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 016619ED1C26E8EE007BD26E /* ParsePushyAppUITests.m */; };
+		59F67D9ED6D4F67256F9CF22 /* libPods-ParsePushyApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81AEE8FA970478BFCF4A21DC /* libPods-ParsePushyApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,9 @@
 		016619E91C26E8EE007BD26E /* ParsePushyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParsePushyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		016619ED1C26E8EE007BD26E /* ParsePushyAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParsePushyAppUITests.m; sourceTree = "<group>"; };
 		016619EF1C26E8EE007BD26E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		105EE7BA7A6479C6F4892DB3 /* Pods-ParsePushyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParsePushyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParsePushyApp/Pods-ParsePushyApp.debug.xcconfig"; sourceTree = "<group>"; };
+		3D2C26D5C591065A58FF2480 /* Pods-ParsePushyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParsePushyApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParsePushyApp/Pods-ParsePushyApp.release.xcconfig"; sourceTree = "<group>"; };
+		81AEE8FA970478BFCF4A21DC /* libPods-ParsePushyApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ParsePushyApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59F67D9ED6D4F67256F9CF22 /* libPods-ParsePushyApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +92,8 @@
 				016619E11C26E8EE007BD26E /* ParsePushyAppTests */,
 				016619EC1C26E8EE007BD26E /* ParsePushyAppUITests */,
 				016619C31C26E8EE007BD26E /* Products */,
+				D5722DE9E3E929D217980E92 /* Pods */,
+				87D2980BD0B4863918E652A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +150,23 @@
 			path = ParsePushyAppUITests;
 			sourceTree = "<group>";
 		};
+		87D2980BD0B4863918E652A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81AEE8FA970478BFCF4A21DC /* libPods-ParsePushyApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5722DE9E3E929D217980E92 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				105EE7BA7A6479C6F4892DB3 /* Pods-ParsePushyApp.debug.xcconfig */,
+				3D2C26D5C591065A58FF2480 /* Pods-ParsePushyApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,9 +174,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 016619F21C26E8EE007BD26E /* Build configuration list for PBXNativeTarget "ParsePushyApp" */;
 			buildPhases = (
+				152738C61F1C36F0FE112871 /* Check Pods Manifest.lock */,
 				016619BE1C26E8EE007BD26E /* Sources */,
 				016619BF1C26E8EE007BD26E /* Frameworks */,
 				016619C01C26E8EE007BD26E /* Resources */,
+				69FDC62561DC7240D7B77981 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -273,6 +299,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		152738C61F1C36F0FE112871 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		69FDC62561DC7240D7B77981 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ParsePushyApp/Pods-ParsePushyApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		016619BE1C26E8EE007BD26E /* Sources */ = {
@@ -421,6 +480,7 @@
 		};
 		016619F31C26E8EE007BD26E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 105EE7BA7A6479C6F4892DB3 /* Pods-ParsePushyApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -435,6 +495,7 @@
 		};
 		016619F41C26E8EE007BD26E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D2C26D5C591065A58FF2480 /* Pods-ParsePushyApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -514,6 +575,7 @@
 				016619F41C26E8EE007BD26E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		016619F51C26E8EE007BD26E /* Build configuration list for PBXNativeTarget "ParsePushyAppTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +584,7 @@
 				016619F71C26E8EE007BD26E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		016619F81C26E8EE007BD26E /* Build configuration list for PBXNativeTarget "ParsePushyAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +593,7 @@
 				016619FA1C26E8EE007BD26E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
