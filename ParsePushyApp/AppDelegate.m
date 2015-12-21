@@ -22,7 +22,7 @@
     NSDictionary *remoteNotification = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
     if (remoteNotification) {
         
-        NSString *message = [remoteNotification objectForKey:@"message"];
+        NSString *message = remoteNotification[@"aps"][@"alert"];
         
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Received on launch" message:message preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
